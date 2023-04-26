@@ -1,0 +1,1492 @@
+
+
+
+.audio {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 120;
+    height: 50px;
+    width: auto;
+    margin:20px;
+    padding-left: 10px;
+    top: 25%;
+    left: -0.5%;
+  }
+  .audio audio {
+    margin-left: 10px;
+    visibility: hidden;
+    opacity: 0;
+    
+    transform: translateX(-95px);
+    transition: all 300ms ease;
+    z-index: 6;
+  }
+  .music-but {
+  height: 80px;
+  width: 80px;
+  background:url(files/music.png);
+  background-size: cover;
+  position: absolute;
+  transition: all 300ms ease;
+  z-index: 7;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .music {
+    height: 80px;
+    width: 80px;
+    z-index: 8;
+    opacity: 0;
+  }
+  .music:checked~.music-but {
+    background: url(files/music-1.png);
+    background-size: cover;
+  }
+  .music:checked~audio {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+
+@keyframes float {
+    0% {
+      transform: translate(0%, 0%);
+    }
+  
+    25% {
+      transform: translate(1%, 3%);
+    }
+  
+    50% {
+      transform: translate(3%, 1%);
+    }
+  
+    75% {
+      transform: translate(1%, 3%);
+    }
+  
+    100% {
+      transform: translate(0%, 0%);
+    }
+  }
+
+* {
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: rgb(65, 49, 40);
+    overflow: hidden;
+
+}
+
+/* Header Banner */
+#header-banner {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right, rgb(164, 54, 11), rgb(208, 150, 63),  rgb(208, 150, 63), rgb(164, 54, 11));
+    background-size: 200% 200%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 12;
+    font-weight: 600;
+    
+
+    animation: header-banner 10s infinite ease-in-out;
+
+    border-bottom: 3px white solid;
+
+}
+
+
+
+
+
+/* background */
+.bg-img {
+    position: absolute;
+    height: 500vh;
+    width: 200vw;
+    z-index: -2;
+}
+.bg-trail {
+    position: absolute;
+    height: 500vh;
+    width: 200vw;
+    z-index: -1;
+}
+
+/* plane mechanism */
+.plane {
+    background: url(files/plane.png);
+    background-size: cover;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+
+    z-index: 3;
+}
+.click {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    /* border: khaki solid; */
+    z-index: 4;
+}
+
+.p1 {
+    top:75vh;
+    left: 65vw;
+}
+.to-s2 {
+    top:75vh;
+    left: 65vw;
+}
+
+.p2 {
+    top: 70%;
+    left: 0%;
+
+}
+.to-s3 {
+    top: 70%;
+    left: 0%;
+}
+#slide2:hover .p2{
+    opacity: 1;
+    animation: p2 5s linear forwards;
+
+}
+#slide2:hover .to-s3{
+    opacity: 1;
+    animation: p2 5s linear forwards;
+
+}
+@keyframes p2{
+    0% {
+        transform: translate(0px, 0px);
+    }
+    40% {
+        transform: translate(260%, 0%);
+    }
+    60% {
+        transform: translate(260%, 0%) rotate(-90deg);
+    }
+    100% {
+        transform: translate(230%, -10%) rotate(-270deg);
+    }
+}
+
+
+.p3 {
+    top: -30%;
+    left: 50%;
+    transform: rotate(-270deg);
+
+}
+.to-s4 {
+    top: -30%;
+    left: 50%;
+    transform: rotate(-270deg);
+
+}
+#slide3:hover .p3{
+    opacity: 1;
+    animation: p3 5s linear forwards;
+
+}
+#slide3:hover .to-s4{
+    opacity: 1;
+    animation: p3 5s linear forwards;
+
+}
+@keyframes p3{
+    0% {
+        transform: translate(0px, 0px) rotate(-270deg);
+    }
+    10% {
+        transform: translate(60%, 300%) rotate(-300deg);
+    }
+    30% {
+        transform: translate(160%, 400%) rotate(-360deg);
+    }
+    60% {
+        transform: translate(90%, 500%) rotate(-390deg) scaleX(-1);
+    }
+    100% {
+        transform: translate(-250%, 540%) rotate(-360deg) scaleX(-1);
+    }
+}
+
+.p4 {
+    bottom: 5%;
+    right: 0%;
+    transform: scaleX(-1);
+
+}
+.to-s5 {
+    bottom: 5%;
+    right: 0%;
+
+
+}
+#slide4:hover .p4{
+    opacity: 1;
+    animation: p4 3s linear forwards;
+
+}
+#slide4:hover .to-s5{
+    opacity: 1;
+    animation: p4 3s linear forwards;
+
+}
+@keyframes p4{
+    0% {
+        transform: translate(0px, 0px) scaleX(-1);
+    }
+    50% {
+        transform: translate(-160%, 0px) scaleX(-1);
+    }
+    100% {
+        transform: translate(-140%, 10%) scaleX(1) rotate(60deg);
+    }
+}
+
+.p5 {
+    top: 5%;
+    right: 30%;
+    transform:rotate(60deg);
+}
+.to-s6 {
+    top: 5%;
+    right: 30%;
+
+
+}
+#slide5:hover .p5{
+    opacity: 1;
+    animation: p5 5s linear forwards;
+
+}
+#slide5:hover .to-s6{
+    opacity: 1;
+    animation: p5 5s linear forwards;
+
+}
+@keyframes p5{
+    0% {
+        transform: translate(0px, -20px) rotate(60deg);
+    }
+    20% {
+        transform: translate(0%, 10%) scaleX(-1) rotate(10deg);
+    }
+    40% {
+        transform: translate(-200%, -20%) scaleX(-1) rotate(10deg);
+    }
+   60% {
+        transform: translate(-280%, 200%) scaleX(-1) rotate(80deg);
+    }
+    75% {
+        transform: translate(-200%, 360%) scaleX(1) rotate(0deg);
+    }
+    100% {
+        transform: translate(140%, 360%) scaleX(1) rotate(0deg);
+    }
+   
+}
+
+.p6 {
+    bottom: 0%;
+    left: 0%;
+    transform:rotate(0deg) scaleX(1);
+}
+.to-s7 {
+    bottom: 0%;
+    left: 0%;
+    transform:rotate(0deg) scaleX(1);
+
+}
+#slide6:hover .p6{
+    opacity: 1;
+    animation: p6 5s linear forwards;
+
+}
+#slide6:hover .to-s7{
+    opacity: 1;
+    animation: p6 5s linear forwards;
+
+}
+@keyframes p6{
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    50% {
+        transform: translate(150%, -40px) rotate(0deg) scaleX(1);
+    }
+
+    100% {
+        transform: translate(90%, -40%) scaleX(-1) rotate(40deg);
+    }
+   
+}
+
+.p7 {
+    top: 0%;
+    left: 5%;
+    transform:rotate(-60deg) scaleX(-1);
+}
+.to-s8 {
+    top: 0%;
+    left: 5%;
+    transform:rotate(-60deg) scaleX(-1);
+
+}
+#slide7:hover .p7{
+    opacity: 1;
+    animation: p7 2s linear forwards;
+
+}
+#slide7:hover .to-s8{
+    opacity: 1;
+    animation: p7 2s linear forwards;
+
+}
+@keyframes p7 {
+    0% {
+        transform: translate(0px, 0px) rotate(-60deg) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(-20%, 40%) rotate(-10deg) scaleX(-1);
+    }
+   
+}
+
+.p8 {
+    top: 20%;
+    right: -5%;
+    transform:rotate(-60deg) scaleX(-1);
+}
+.to-s9 {
+    top: 20%;
+    right: -5%;
+    transform:rotate(-60deg) scaleX(-1);
+
+}
+#slide8:hover .p8{
+    opacity: 1;
+    animation: p8 2s linear forwards;
+
+}
+#slide8:hover .to-s9{
+    opacity: 1;
+    animation: p8 2s linear forwards;
+
+}
+@keyframes p8{
+    0% {
+        transform: translate(0px, 0px) rotate(-60deg) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(-10%, 240%) rotate(-80deg) scaleX(-1);
+    }
+   
+}
+
+.p9 {
+    top: 0%;
+    right: 5%;
+    transform:rotate(-30deg) scaleX(-1);
+}
+.to-s10 {
+    top: 0%;
+    right: 5%;
+    transform:rotate(-30deg) scaleX(-1);
+
+}
+#slide9:hover .p9{
+    opacity: 1;
+    animation: p9 10s linear forwards;
+
+}
+#slide9:hover .to-s10{
+    opacity: 1;
+    animation: p9 10s linear forwards;
+
+}
+@keyframes p9{
+    0% {
+        transform: translate(0px, 0px) rotate(-30deg) scaleX(-1);
+    }
+
+    5% {
+        transform: translate(-20%, 10%) rotate(-10deg) scaleX(-1);
+    }
+10% {
+        transform: translate(-330%, 10%) rotate(-10deg) scaleX(-1);
+    }
+
+    40% {
+        transform: translate(-360%, 120%) rotate(-380deg) scaleX(-1);
+    }
+    50% {
+        transform: translate(-360%, 180%) rotate(-300deg) scaleX(1);
+    }
+    60% {
+        transform: translate(-360%, 290%) rotate(-60deg) scaleX(-1);
+    }
+    65% {
+        transform: translate(-380%, 300%) rotate(-30deg) scaleX(-1);
+    }
+    80% {
+        transform: translate(-380%, 380%) rotate(30deg) scaleX(1);
+    }
+    100% {
+        transform: translate(0%, 390%) rotate(10deg) scaleX(1);
+    }
+   
+}
+
+
+.p10 {
+    bottom: 5%;
+    left: 0%;
+    transform:rotate(10deg) scaleX(1);
+}
+.to-s11 {
+    bottom: 5%;
+    left: 0%;
+    transform:rotate(10deg) scaleX(1);
+
+}
+#slide10:hover .p10{
+    opacity: 1;
+    animation: p10 5s linear forwards;
+
+}
+#slide10:hover .to-s11{
+    opacity: 1;
+    animation: p10 5s linear forwards;
+
+}
+@keyframes p10{
+    0% {
+        transform: translate(0px, 0px) rotate(-10deg) scaleX(1);
+    }
+
+    30% {
+        transform: translate(200%, 10%) rotate(10deg) scaleX(1);
+    }
+    60% {
+        transform: translate(280%, 10%) rotate(370deg) scaleX(1);
+    }
+    65% {
+        transform: translate(300%, 10%) rotate(370deg) scaleX(1);
+    }
+    100% {
+        transform: translate(360%, -40%) rotate(320deg) scaleX(1);
+    }
+   
+}
+
+.container {
+    width: 200vw;
+    background-size: contain;
+}
+#floor1, #floor2, #floor3, #floor4, #floor5 {
+    height: 100vh;
+    width: 200vw;
+    display: flex;
+}
+#slide1, #slide2, #slide3, #slide4, #slide5, #slide6, #slide7, #slide8, #slide9, #slide10 {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+/* Slide1 */
+.name {
+    width: 50%;
+    height: 10%;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+}
+.name p {
+    color: white;
+    font-size: 70px;
+    font-family: 'Love Ya Like A Sister', cursive;
+text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
+.name span {
+    color: white;
+    font-size: 20px;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+.prof {
+    height: 73%;
+    width: 30%;
+    background-image: url(files/profile.png);
+    background-size: contain;
+    position: absolute;
+    background-position: center;
+    left: 10%;
+    top: 10%;
+    animation: float infinite 10s normal;
+}
+/* Slide2 */
+
+
+
+.personal-info {
+    width: 60%;
+    height:70%;
+    margin: -10% 20% 0% 0%;
+    box-sizing: border-box;
+    padding: 50px 0px;
+    font-size: 30px;
+    font-family: 'Chivo Mono', monospace;
+    line-height: 40px;
+  }
+.info1, .info2, .info3, .info4, .info5, .info6, .info7, .info8 {
+    font-size: 30px;
+    font-family: 'Chivo Mono', monospace;
+    line-height: 40px;
+}
+
+.personal-info div:hover {
+font-weight: 800;
+}
+.hover-text {
+    height: 60px;
+    width: 250px;
+    background: url(files/hover-text.jpg);
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    /* margin-top: 2%; */
+}
+  .frame {
+    width: 413px;
+    height: 500px;
+    background:url(files/frame.jpg);
+    background-size: cover;
+    position: absolute;
+    bottom: 25%;
+    right: 2%;
+  }
+  .frame div {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .pho1, .pho2, .pho3, .pho4, .pho5, .pho6, .pho7, .pho8 {
+    position: absolute;
+    opacity: 0;
+    width: 380px;
+    height: 369px;
+    margin: 30px 0px 0px 14px;
+  }
+  .blk {
+    background-color: #090909;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 380px;
+    height: 369px;
+    margin: 30px 0px 0px 14px;
+    opacity: 1;
+  }
+
+  .pho1 {
+    background:url(files/phone/me/me-lan3.jpg);
+    transition: all 300ms ease-in;
+  }
+  .pho2 {
+    background:url(files/frame/fr2.jpg);
+    transition: all 300ms ease-in;
+  }
+  .pho3 {
+    background:url(files/frame/fr3.png);
+    transition: all 300ms ease-in;
+  }
+  .pho4 {
+    background:url(files/frame/461414_446410545387878_777745097_o.jpg);
+    transition: all 300ms ease-in;
+  }
+  .pho5 {
+    background:url(files/frame/fr5.jpg);
+    transition: all 300ms ease-in;
+  }
+  .pho6 {
+    background:url(files/frame/fr6.jpg);
+    transition: all 300ms ease-in;
+  }
+  .pho7 {
+    background:url(files/phone/arts/art1.jpg);
+    transition: all 300ms ease-in;
+    
+  }
+  .pho8 {
+    background:url(files/frame/fr7.png);
+    transition: all 300ms ease-in;
+  }
+  
+  p {
+    display:inline;
+  }
+  .info1  {
+    display:inline;
+  }
+  .info2  {
+    display:inline;
+  }
+  .info3  {
+    display:inline;
+  }
+  .info4  {
+    display:inline;
+  }
+  .info5  {
+    display:inline;
+  }
+  .info6  {
+    display:inline;
+  }
+  .info7  {
+    display:inline;
+  }
+  .info8  {
+    display:inline;
+  }
+
+  
+  .info1:hover ~ .frame .pho1, .info2:hover ~ .frame .pho2, .info3:hover ~ .frame .pho3, .info4:hover ~ .frame .pho4, .info5:hover ~ .frame .pho5, .info6:hover ~ .frame .pho6, .info7:hover ~ .frame .pho7, .info8:hover ~ .frame .pho8{
+    opacity: 1;
+  }
+
+/* slide 3 */
+
+.self-collage {
+    height: 75px;
+    width: 500px;
+    position: absolute;
+    top: 1%;
+    left: 15%;
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+    font-size: 50px;
+    background: url(files/achieve/achieve-bg1.jpg);
+
+  }
+.me-frame {
+    height: 80vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    z-index: 2;
+}
+.me-frame div:hover {
+    scale: 1.5;
+    background-color: rgba(255, 255, 255, 0.74);
+    background-blend-mode: darken;
+}
+.me-frame div {
+    background-color: rgba(0, 0, 0, 0.172);
+    background-blend-mode: darken;
+}
+
+.me-frame div {
+    border: white 5px solid;
+    transition: all 500ms ease;
+}
+.me-cell1 {
+    grid-area: 1 / 1 / 9 / 4;
+    background: url(files/phone/me/me-por6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.me-cell2 {
+    grid-area: 1 / 4 / 5 / 9;
+    background: url(files/phone/me/me-lan2.jpg);
+    background-size: cover;
+    background-position: 0%;
+}
+.me-cell3 {
+    grid-area: 1 / 9 / 6 / 12;
+    background: url(files/phone/me/me-por5.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.me-cell4 {
+    grid-area: 1 / 12 / 6 / 14;
+    background: url(files/phone/me/me-por10.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.me-cell5 {
+    grid-area: 5 / 4 / 9 / 6;
+    background: url(files/phone/me/me-sq1.jpg);
+    background-size: cover;
+}
+.me-cell6 {
+    grid-area: 5 / 6 / 14 / 9;
+    background: url(files/phone/me/me-por3.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+.me-cell7 {
+    grid-area: 9 / 1 / 14 / 6;
+    background: url(files/phone/me/me-lan3.jpg);
+    background-size: cover;
+    
+}
+.me-cell8 {
+    grid-area: 6 / 9 / 10 / 14;
+    background: url(files/phone/me/me-lan1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.me-cell9 {
+    grid-area: 10 / 9 / 14 / 11;
+    background: url(files/phone/me/me-por4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.me-cell10 {
+    grid-area: 10 / 11 / 14 / 14;
+    background: url(files/phone/me/me-por8.jpg);
+    background-size: cover;
+    background-position: 0% 15%;
+}
+/* .me-cell11 {
+    grid-area: 1 / 1 / 3 / 3;
+    background-color: crimson;
+}
+.me-cell12 {
+    grid-area: 1 / 1 / 3 / 3;
+    background-color:coral;
+}
+.me-cell13 {
+    grid-area: 1 / 1 / 3 / 3;
+    background-color:darkblue;
+}
+.me-cell14 {
+    grid-area: 1 / 1 / 3 / 3;
+    background-color: darkgreen;
+} */
+
+/* Slide 4 */
+.fam-collage {
+    height: 75px;
+    width: 500px;
+    position: absolute;
+    top: 1%;
+    left: 15%;
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+    font-size: 50px;
+    background: url(files/achieve/achieve-bg1.jpg);
+
+  }
+.fam-frame {
+    height: 80vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    z-index: 2;
+}
+.fam-frame div {
+    background-size: cover;
+}
+.fam-frame div:hover {
+    scale: 1.5;
+    background-color: rgba(255, 255, 255, 0.74);
+    background-blend-mode: darken;
+}
+.fam-frame div {
+    background-color: rgba(0, 0, 0, 0.172);
+    background-blend-mode: darken;
+}
+
+.fam-frame div {
+    border: white 5px solid;
+    transition: all 500ms ease;
+}
+.fam-cell1 {
+    grid-area: 1 / 1 / 5 / 3 ;
+    background: url(files/phone/fam/fam-sq1.jpg);
+}
+.fam-cell2 {
+    grid-area: 1 / 3 / 9 / 5;
+    background: url(files/phone/fam/fam-por1.jpg);
+}
+.fam-cell3 {
+    grid-area: 1 / 5 / 6 / 7;
+    background: url(files/phone/fam/fam-por2.jpg);
+}
+.fam-cell4 {
+    grid-area: 1 / 7 / 4 / 11;
+    background: url(files/phone/fam/fam-lan1.jpg);
+    background-position: center;
+}
+.fam-cell5 {
+    grid-area: 1 / 11 / 6 / 13;
+    background: url(files/phone/fam/fam-por3.jpg);
+    background-position: top;
+}
+.fam-cell6 {
+    grid-area: 5 / 1 / 9 / 3;
+    background: url(files/phone/fam/fam-sq2.jpg);
+}
+.fam-cell7 {
+    grid-area: 6 / 5 / 13 / 7;
+    background: url(files/phone/fam/fam-por4.jpg);
+    background-position: -30px 0px;
+}
+
+.fam-cell8 {
+    grid-area: 4 / 7 / 8 / 9;
+    background: url(files/phone/fam/fam-sq3.jpg);
+}
+.fam-cell9 {
+    grid-area: 4 / 9 / 6 / 11;
+    background: url(files/phone/fam/fam-lan3.jpg);
+    background-position: center;
+}
+.fam-cell10 {
+    grid-area: 9 / 1 / 13 / 5;
+    background: url(files/phone/fam/fam-lan4.jpg);
+    background-position: center;
+}
+.fam-cell11 {
+    grid-area: 6 / 9 / 9 / 13;
+    background: url(files/phone/fam/fam-lan5.jpg);
+    background-position: 0px -50px;
+}
+.fam-cell12 {
+    grid-area: 8 / 7 / 13 / 9;
+    background: url(files/phone/fam/fam-por5.png);
+}
+.fam-cell13 {
+    grid-area: 9 / 9 / 13 / 11 ;
+    background: url(files/phone/fam/fam-sq4.jpg);
+}
+.fam-cell14 {
+    grid-area: 9 / 11 / 13 / 13;
+    background: url(files/phone/fam/fam-sq5.jpg);
+}
+/* Slide 5 */
+.fr-collage {
+    height: 75px;
+    width: 500px;
+    position: absolute;
+    top: 1%;
+    left: 15%;
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+    font-size: 50px;
+    background: url(files/achieve/achieve-bg1.jpg);
+    z-index: 1;
+  }
+.friends-frame {
+    height: 80vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    z-index: 2;
+}
+.friends-frame div:hover {
+    scale: 1.5;
+    background-color: rgba(255, 255, 255, 0.74);
+    background-blend-mode: darken;
+}
+.friends-frame div {
+    background-color: rgba(0, 0, 0, 0.172);
+    background-blend-mode: darken;
+}
+
+.friends-frame div {
+    border: white 5px solid;
+    transition: all 500ms ease;
+}
+.friends-cell1 {
+    grid-area: 1 / 1 / 9 / 4;
+    background: url(files/phone/friends/fr-por1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.friends-cell2 {
+    grid-area: 1 / 4 / 5 / 9;
+    background: url(files/phone/friends/fr-lan1.jpeg);
+    background-size: cover;
+    background-position: 0%;
+}
+.friends-cell3 {
+    grid-area: 1 / 9 / 6 / 12;
+    background: url(files/phone/friends/fr-lan2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.friends-cell4 {
+    grid-area: 1 / 12 / 6 / 14;
+    background: url(files/phone/friends/fr-por2.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.friends-cell5 {
+    grid-area: 5 / 4 / 9 / 6;
+    background: url(files/phone/friends/fr-sq2.jpg);
+    background-size: cover;
+}
+.friends-cell6 {
+    grid-area: 5 / 6 / 14 / 9;
+    background: url(files/phone/friends/fr-por3.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+.friends-cell7 {
+    grid-area: 9 / 1 / 14 / 6;
+    background: url(files/phone/friends/fr-lan4.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    
+}
+.friends-cell8 {
+    grid-area: 6 / 9 / 10 / 14;
+    background: url(files/phone/friends/fr-lan5.jpeg);
+    background-size: cover;
+   
+}
+.friends-cell9 {
+    grid-area: 10 / 9 / 14 / 11;
+    background: url(files/phone/friends/fr-sq1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.friends-cell10 {
+    grid-area: 10 / 11 / 14 / 14;
+    background: url(files/phone/friends/fr-lan3.jpg);
+    background-size: cover;
+    background-position: 0% 15%;
+}
+
+/* SLide 6 */
+.church-collage {
+    height: 75px;
+    width: 500px;
+    position: absolute;
+    top: 1%;
+    left: 15%;
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+    font-size: 50px;
+    background: url(files/achieve/achieve-bg1.jpg);
+
+  }
+.church-frame {
+    height: 80vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    z-index: 2;
+}
+.church-frame div {
+    background-size: cover;
+}
+.church-frame div:hover {
+    scale: 1.5;
+    background-color: rgba(255, 255, 255, 0.74);
+    background-blend-mode: darken;
+}
+.church-frame div {
+    background-color: rgba(0, 0, 0, 0.172);
+    background-blend-mode: darken;
+}
+
+.church-frame div {
+    border: white 5px solid;
+    transition: all 500ms ease;
+}
+.church-cell1 {
+    grid-area: 1 / 1 / 8 / 3 ;
+    background: url(files/phone/church/chu-por6.jpg);
+    background-position: 40% 0%;
+}
+.church-cell2 {
+    grid-area: 1 / 3 / 8 / 5;
+    background: url(files/phone/church/chu-por5.jpg);
+    background-position: 50% 0%;
+}
+.church-cell3 {
+    grid-area: 1 / 5 / 6 / 7;
+    background: url(files/phone/church/chu-por1.jpg);
+}
+.church-cell4 {
+    grid-area: 1 / 7 / 4 / 11;
+    background: url(files/phone/church/chu-lan1.jpg);
+    background-position: center;
+}
+.church-cell5 {
+    grid-area: 1 / 11 / 6 / 13;
+    background: url(files/phone/church/chu-por2.jpeg);
+    background-position: bottom;
+}
+
+.church-cell7 {
+    grid-area: 6 / 5 / 13 / 7;
+    background: url(files/phone/church/chu-por3.jpg);
+}
+
+.church-cell8 {
+    grid-area: 4 / 7 / 8 / 9;
+    background: url(files/phone/church/chu-sq2.jpg);
+    background-position: bottom;
+}
+.church-cell9 {
+    grid-area: 4 / 9 / 6 / 11;
+    background: url(files/phone/church/chu-lan2.jpg);
+    background-position: top;
+}
+.church-cell10 {
+    grid-area: 8 / 1 / 13 / 5;
+    background: url(files/phone/church/chu-lan3.jpg);
+    background-position: bottom;
+}
+.church-cell11 {
+    grid-area: 6 / 9 / 9 / 13;
+    background: url(files/phone/church/chu-lan4.jpg);
+    background-position: 0px -50px;
+}
+.church-cell12 {
+    grid-area: 8 / 7 / 13 / 9;
+    background: url(files/phone/church/chu-por4.jpg);
+}
+.church-cell13 {
+    grid-area: 9 / 9 / 13 / 11 ;
+    background: url(files/phone/church/chu-sq3.jpg);
+}
+.church-cell14 {
+    grid-area: 9 / 11 / 13 / 13;
+    background: url(files/phone/church/chu-sq1.jpeg);
+    background-position: bottom;
+}
+/* Slide 7 */
+.travel {
+    height: 250px;
+    width: 500px;
+    background: url(files/travel.png);
+    background-size: cover;
+    position: absolute;
+    z-index: 3;
+    left: 5%;
+    top: 25%;
+    scale: 0.8;
+}
+.des {
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+    font-size: 70px;
+    position: absolute;
+    bottom: 28%;
+    left: 10%;
+    opacity: 0;
+    text-align: center;
+    
+    transition: all 300ms ease;
+}
+
+.pin {
+    width: 60px;
+    height: 60px;
+    background: url(files/pin.png);
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+}
+.pn-pic {
+    width: 385px;
+    height:570px;
+    position: absolute;
+    right: 7%;
+    transition: all 500ms ease;
+    opacity: 0;
+    
+}
+.pn-pic1 {
+    background: url(files/destination/batangas.png);
+    background-size: cover;
+}
+.pn-pic2 {
+    background: url(files/destination/cavite.png);
+    background-size: cover;
+}
+.pn-pic3 {
+    background: url(files/destination/zambales.png);
+    background-size: cover;
+}
+.pn-pic4 {
+    background: url(files/destination/pangasinan.png);
+    background-size: cover;
+}
+.pn-pic5 {
+    background: url(files/destination/iloilo.png);
+    background-size: cover;
+}
+.pn-pic6 {
+    background: url(files/destination/dumaguete.png);
+    background-size: cover;
+}
+.pn-pic7 {
+    background: url(files/destination/baguio.png);
+    background-size: cover;
+}
+.pn1 {
+    top:36%;
+    left: 46.5%;
+}
+
+
+.pn2 {
+    top:33%;
+    left: 45%;
+}
+.pn3 {
+    top:30%;
+    left: 43%;
+}
+.pn4 {
+    top:25%;
+    left: 44%;
+    z-index: 2;
+}
+.pn5 {
+    top:50%;
+    left: 50%;
+}
+.pn6 {
+    top:60%;
+    left: 52.5%;
+}
+.pn7 {
+    top:20%;
+    left: 45%;
+}
+.pn1:hover ~ .pn-pic1 {
+    opacity: 1;
+    }
+    
+.pn2:hover ~ .pn-pic2 {
+        opacity: 1;
+        }
+.pn3:hover ~ .pn-pic3 {
+            opacity: 1;
+            }
+.pn4:hover ~ .pn-pic4 {
+            opacity: 1;
+            }
+.pn5:hover ~ .pn-pic5 {
+            opacity: 1;
+            }
+.pn6:hover ~ .pn-pic6 {
+                opacity: 1;
+                }
+.pn7:hover ~ .pn-pic7 {
+                    opacity: 1;
+                    }
+                    .pin:hover ~ .des {
+                        bottom: 30%;
+                    }
+                    .pn1:hover ~ .des1 {
+                        opacity: 1;
+                        
+                        }
+                        
+                    .pn2:hover ~ .des2 {
+                            opacity: 1;
+                            }
+                    .pn3:hover ~ .des3 {
+                                opacity: 1;
+                                }
+                    .pn4:hover ~ .des4 {
+                                opacity: 1;
+                                }
+                    .pn5:hover ~ .des5 {
+                                opacity: 1;
+                                }
+                    .pn6:hover ~ .des6 {
+                                    opacity: 1;
+                                    }
+                    .pn7:hover ~ .des7 {
+                                        opacity: 1;
+                                        }
+/* Slide9 */
+.art {
+    height:100px;
+    width: 200px;
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+    font-size: 60px;
+
+
+}
+.art-container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: slid 50s linear infinite;
+
+  }
+  
+  .art-container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i ) * 80deg)) translateZ(400px);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .art-container span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: all 1s ease;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  .art-container span:hover img {
+    transform:  scale(1.3);
+  }
+  @keyframes slid {
+    0% {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+
+  /* Slide 8 */
+  .achievements {
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+    font-size: 60px;
+    position: absolute;
+    left: -5%;
+transform: rotate(-90deg);
+  }
+  .achievement-wrapper {
+    height:100%;
+    width:70%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .achieve-container {
+    background: #191919;
+    min-height: 70%;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  nav a {
+      font-size: 40px;
+      color: #2d2820;
+      text-decoration: none;
+      padding: 20px 5px;
+      text-align: center;
+      background-color: #d1cbbc;
+      list-style: none;
+      margin: 5px;
+border-radius: 5px;
+transition: all 300ms ease;
+box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+  nav a:hover {
+scale: 1.2;
+color: white;
+background-color: #ceae56;
+
+  }
+  nav a p {
+    font-family: rockwell;
+    
+font-size: 30px;
+line-height: 0px;
+  }
+  
+  nav {
+      position: absolute;
+      left: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 80%; 
+      background: #342c23;
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+  
+  section {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 0;
+      opacity: 0;
+      transition: all ease-in .5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  } 
+  
+  section h1 {
+      color: #fff;
+      font-size: 50px;
+      text-transform: uppercase;
+      opacity: 0;
+      margin: 20px 0px;
+  }
+  
+  /* Styles applied on trigger */
+  section:target {
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+  }
+  
+  section:target h1 {
+      opacity: 0;
+      animation: 2s fadeIn forwards .5s;
+  }
+  
+  section div {
+    height: 80%;
+    width: 100%;
+  }
+
+
+  #first div, #second div, #third div, #fourth div, #fifth div, #sixth div{
+padding: 10px 10px 10px 60px;
+  }
+  #first div p, #second div p, #third div p, #fourth div p, #fifth div p, #sixth div p{
+color: white;
+font-family: 'Bitter', serif;
+font-size: 25px;
+font-weight: 600;
+  }
+
+  #first div {
+    background:#6f5240;
+  }
+
+  #second {
+  }
+  #second div {
+    background: #7d4e30;
+}
+  
+  #third {
+
+  }
+  #third div {
+    background: #8c603c;
+}
+  
+  #fourth {
+
+  }
+  #fourth div {
+    background: #705834;
+}
+#fifth {
+
+}
+#fifth div {
+  background: #774620;
+  
+}
+#sixth {
+
+}
+#sixth div {
+  background: #4e3c2a;
+}
+  
+  @keyframes fadeIn {
+      100% { opacity:1 }
+  }
+
+/* Slide 10 */
+.quote {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 60px;
+    color: white;
+    width: 50%;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+}
+.quote span {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 20px;
+}
+
+.back {
+    height: 100px;
+    width: 100px;
+    background: url(files/back.png);
+    background-size: cover;
+    position: absolute;
+    left: 1.5%;
+    top: 10%;
+    transition: all 300ms ease;
+
+
+}
+.b1 {
+    top: 40%; 
+}
+
+.back:hover{
+    opacity: 0.9;
+    scale: 1.1;
+}
