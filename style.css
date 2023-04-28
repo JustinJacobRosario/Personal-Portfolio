@@ -10,7 +10,7 @@
     background:#1e1001;
     justify-content:center;
       animation:delete 2s ease-in-out forwards;
-    animation-delay:15s;
+    animation-delay:20s;
     z-index:200;
   }
   
@@ -42,7 +42,7 @@
       height: 35px;
      box-shadow: inset 0 0 0.5em 0 #ddca7e, 0 0 4.5em 0 #ffcc56;
       border-radius: 100px;
-      animation: progres 15s forwards;    
+      animation: progres 20s forwards;    
   }
   @keyframes progres{
     0% {
